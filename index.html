@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Experiment 1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="ribbon-box">
+        <h1>The world deems bright for those with Eyes</h1>
+        <p>for one with no eyes, days with the sun seem darker than nights,<br>
+           for one with no life, days play a broken dead,<br>
+           hence the world feels alive of those with a life.</p>
+
+        <button id="star-btn" type="button">star</button>
+        <audio id="star-song" src="song.mp3"></audio>
+        <button id="soft-btn" type="button">soft</button>
+        <audio id="soft-song" src="songg.mp3"></audio>
+
+    </div>
+
+    <script>
+        const starBtn = document.getElementById("star-btn");
+        const starSong = document.getElementById("star-song");
+        const softBtn = document.getElementById("soft-btn");
+        const softSong = document.getElementById("soft-song");
+
+        starBtn.addEventListener("click", function () {
+            if (starSong.paused) {
+                softSong.pause();
+                softBtn.textContent = "soft";
+                starSong.play();
+                starBtn.textContent = "pause star";
+            
+            } else {
+                starSong.pause();
+                starBtn.textContent = "star";
+            }
+        });
+        softBtn.addEventListener("click", function() {
+            if (softSong.paused){
+                starSong.pause(); 
+                starBtn.textContent ="star";
+                softSong.play();
+                softBtn.textContent ="pause soft";
+            } else {
+                softSong.pause();
+                    softBtn.textContent ="soft";
+            }
+        });
+</script>
+</body>
+</html>
